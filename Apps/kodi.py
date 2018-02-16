@@ -5,14 +5,14 @@ def start():
     print "Starting Kodi"
     # kill process if already running
     if not is_started():
-        command = " export DISPLAY=:0.0; /usr/bin/kodi"
+        command = "systemctl start kodi"
         print "execute command: %s" % command
         subprocess.Popen(command, shell=True)
 
 
 def stop():
     print "Stopping Kodi"
-    p = subprocess.Popen("ps -ef | grep kodi | grep -v grep | awk '{print $2}' | xargs kill -9", shell=True)
+    p = subprocess.Popen("systemctl stop kodi", shell=True)
     p.communicate()
 
 
