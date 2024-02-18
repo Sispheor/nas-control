@@ -1,0 +1,11 @@
+[Unit]
+Description=Nas control
+
+[Service]
+User=nico
+Type=simple
+WorkingDirectory=/home/nico/nas_control/
+ExecStart=/home/nico/nas_control/run.sh
+
+[Install]
+WantedBy=multi-user.target
